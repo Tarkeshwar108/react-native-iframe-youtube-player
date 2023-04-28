@@ -6,16 +6,33 @@ A simple youtube player.
 
 ```sh
 npm install react-native-iframe-youtube-player
+
+or
+
+yarn add react-native-iframe-youtube-player
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'react-native-iframe-youtube-player';
+import YoutubePlayer from 'react-native-iframe-youtube-player';
 
 // ...
 
-const result = await multiply(3, 7);
+<YoutubePlayer videoId="froKmdjJRfE" />;
+```
+
+## Example
+
+```js
+import React from 'react';
+import YoutubePlayer from 'react-native-iframe-youtube-player';
+
+function App() {
+  return <YoutubePlayer videoId="froKmdjJRfE" />;
+}
+
+export default App;
 ```
 
 ## Contributing
