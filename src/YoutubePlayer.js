@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useRef, useState } from 'react';
 import {
   StyleSheet,
@@ -11,19 +12,19 @@ import WebView, { WebViewMessageEvent } from 'react-native-webview';
 import { buildHTML } from './iFrame';
 import { Images } from './assets';
 
-const YoutubePlayer = ({ videoId }: YoutubePlayerProps) => {
-  const webRef = useRef<WebView>(null);
+const YoutubePlayer = ({ videoId }) => {
+  const webRef = useRef(null);
   const [time, setTime] = useState('00:00');
   const [loading, setLoading] = useState(true);
-  const [playing,setPlaying]=useState(false);
+  const [playing, setPlaying] = useState(false);
   const [webViewHasLoadedContent, setWebViewHasLoadedContent] = useState(false);
   const playVideo = () => {
-    setPlaying(true)
+    setPlaying(true);
     webRef.current?.injectJavaScript('play()');
   };
 
   const pauseVideo = () => {
-    setPlaying(false)
+    setPlaying(false);
     webRef.current?.injectJavaScript('pause()');
   };
 
@@ -31,7 +32,7 @@ const YoutubePlayer = ({ videoId }: YoutubePlayerProps) => {
     webRef.current?.injectJavaScript('seekTo(0)');
   };
 
-  const onMessageRecieved = (message: WebViewMessageEvent) => {
+  const onMessageRecieved = (message) => {
     const responseJSON = JSON.parse(message.nativeEvent.data);
     const minutes = Math.round(responseJSON.currentDuration / 60);
     const seconds = Math.round(responseJSON.currentDuration % 60);
@@ -57,7 +58,11 @@ const YoutubePlayer = ({ videoId }: YoutubePlayerProps) => {
             <ActivityIndicator
               size="large"
               color={'white'}
-              style={{ position: 'absolute', alignSelf: 'center', marginTop: 95 }}
+              style={{
+                position: 'absolute',
+                alignSelf: 'center',
+                marginTop: 95,
+              }}
             />
           )}
           onLoadStart={(event) => {
@@ -65,7 +70,7 @@ const YoutubePlayer = ({ videoId }: YoutubePlayerProps) => {
               setWebViewHasLoadedContent(true);
             }, 500);
           }}
-          style={{opacity: webViewHasLoadedContent ? 1 : 0}}
+          style={{ opacity: webViewHasLoadedContent ? 1 : 0 }}
         />
         {loading ? null : (
           <View
@@ -79,20 +84,15 @@ const YoutubePlayer = ({ videoId }: YoutubePlayerProps) => {
         )}
       </View>
       <View style={styles.buttonRow}>
-        {
-          !playing?(
+        {!playing ? (
           <TouchableOpacity activeOpacity={1} onPress={playVideo}>
             <Image source={Images.play} style={{ height: 50, width: 49 }} />
           </TouchableOpacity>
-          ):
-          (
-          <TouchableOpacity activeOpacity={1}  onPress={pauseVideo}>
+        ) : (
+          <TouchableOpacity activeOpacity={1} onPress={pauseVideo}>
             <Image source={Images.pause} style={{ height: 50, width: 49 }} />
           </TouchableOpacity>
-          )
-        }
-
-
+        )}
       </View>
     </SafeAreaView>
   );

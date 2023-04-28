@@ -1,15 +1,17 @@
 # react-native-iframe-youtube-player
 
-A simple youtube player.
+A `<YoutubePlayer />` component for React Native.
 
 ## Installation
 
 ```sh
 npm install react-native-iframe-youtube-player
-
+npm install react-native-webview
 or
 
 yarn add react-native-iframe-youtube-player
+yarn add react-native-webview
+
 ```
 
 ## Usage

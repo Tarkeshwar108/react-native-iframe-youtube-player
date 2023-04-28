@@ -1,7 +1,8 @@
+/* eslint-disable prettier/prettier */
 import { Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
 
-const buildIFrame = (videoId: string) => `
+const buildIFrame = (videoId) => `
         <div id="player"></div>
           <script>
           var tag = document.createElement('script');
@@ -72,7 +73,7 @@ const iFrameStyle = `
         </style>
         `;
 
-export const buildHTML = (videoId: string) => `
+export const buildHTML = (videoId) => `
         <!DOCTYPE html>
         <html>
           <head>

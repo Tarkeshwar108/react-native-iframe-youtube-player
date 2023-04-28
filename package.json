@@ -1,7 +1,7 @@
 {
   "name": "react-native-iframe-youtube-player",
-  "version": "0.1.0",
-  "description": "test",
+  "version": "0.1.3",
+  "description": "A simple react native YouTube Player.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -38,15 +38,18 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "YouTubePlayer",
+    "react-native-player",
+    "react-native-iframe-youtube-player"
   ],
-  "repository": "https://github.com/tarkeshwaryadav/react-native-iframe-youtube-player",
-  "author": "Tarkeshwar Prasad Yadav <tarkeshwar@bosframework.com> (https://github.com/tarkeshwaryadav)",
+  "repository": "https://github.com/Tarkeshwar108/react-native-iframe-youtube-player",
+  "author": "Tarkeshwar Prasad Yadav <tarkeshwarprasady@gmail.com> (https://github.com/Tarkeshwar108)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tarkeshwaryadav/react-native-iframe-youtube-player/issues"
+    "url": "https://github.com/Tarkeshwar108/react-native-iframe-youtube-player/issues"
   },
-  "homepage": "https://github.com/tarkeshwaryadav/react-native-iframe-youtube-player#readme",
+  "homepage": "https://github.com/Tarkeshwar108/react-native-iframe-youtube-player#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -71,15 +74,18 @@
     "react-native-builder-bob": "^0.20.0",
     "release-it": "^15.0.0",
     "typescript": "^4.5.2",
-    "react-native-webview":"^12.0.2"
+    "react-native-webview": "^12.0.2"
   },
   "resolutions": {
     "@types/react": "17.0.21"
   },
+  "dependencies": {
+    "react-native-webview": "^12.0.2"
+  },
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-webview":"*"
+    "react-native-webview": "*"
   },
   "engines": {
     "node": ">= 16.0.0"
