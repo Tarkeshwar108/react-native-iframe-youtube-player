@@ -1,6 +1,6 @@
 {
   "name": "react-native-iframe-youtube-player",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A simple react native YouTube Player.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
