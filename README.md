@@ -25,6 +25,7 @@ import YoutubePlayer from 'react-native-iframe-youtube-player';
 ```
 
 ## Example
+<img src="https://i.imgur.com/apNMHVj.jpg" width="400">
 
 ```js
 import React from 'react';
